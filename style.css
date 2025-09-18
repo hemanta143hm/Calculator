@@ -1,0 +1,390 @@
+/* Basic Setup with Animation Background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0d0208; /* Darker background for neon effect */
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* To hide animation overflow */
+    position: relative; /* Needed for pseudo-element positioning */
+}
+
+/* Hacker Animation Background using pseudo-element */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, #00ff6a, transparent);
+    animation: animate-background 4s linear infinite;
+    z-index: -1; /* Place animation behind everything */
+}
+
+@keyframes animate-background {
+    0% {
+        transform: translateY(-100%);
+/* Basic Setup with Animation Background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0d0208; /* Darker background for neon effect */
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* To hide animation overflow */
+    position: relative; /* Needed for pseudo-element positioning */
+}
+
+/* Hacker Animation Background using pseudo-element */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, #00ff6a, transparent);
+    animation: animate-background 4s linear infinite;
+    z-index: -1; /* Place animation behind everything */
+}
+
+@keyframes animate-background {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 420px;
+    z-index: 1; /* Keep calculator above the background animation */
+}
+
+/* Calculator Container */
+.calculator {
+    background-color: rgba(42, 45, 55, 0.85);
+    backdrop-filter: blur(10px); /* Glass effect */
+    border: 1px solid rgba(0, 255, 106, 0.3);
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Brand Section with Image */
+.brand {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #333742;
+    color: #fff;
+}
+
+/* Animated Profile Picture Wrapper */
+.profile-image-wrapper {
+    width: 55px;
+    height: 55px;
+    margin-right: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: conic-gradient(#00ff6a, #00ffff, #ff00de, #ff8f00, #00ff6a);
+    animation: rotate-border 3s linear infinite;
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2a2d37; /* Inner border to create a gap */
+}
+
+.brand h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Display Screen */
+.display input {
+    width: 100%;
+    height: 100px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 3em;
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+
+/* Button Grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+}
+
+button {
+    height: 70px;
+    font-size: 1.2em;
+    border: none;
+    background-color: rgba(51, 55, 66, 0.8);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button:hover {
+    background-color: #00ff6a;
+    color: #0d0208;
+    text-shadow: 0 0 5px #0d0208;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background-color: rgba(62, 67, 80, 0.8);
+    color: #00ff6a;
+    font-size: 1.5em;
+}
+
+.equal {
+    grid-column: span 2;
+    background-color: #00ff6a;
+    color: #0d0208;
+}
+.equal:hover {
+    background-color: #00ffff;
+}
+
+
+/* --- Matrix Calculator Styles --- */
+.matrix-calculator {
+    background-color: rgba(42, 45, 55, 0.85);
+    backdrop-filter: blur(10px); /* Glass effect */
+    border: 1px solid rgba(0, 255, 106, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    color: #fff;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.matrix-calculator h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #00ff6a;
+}
+
+.matrix-inputs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.matrix-container {
+    width: 50%;
+}
+
+.matrix-calculator label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.matrix-calculator textarea {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #333742;
+    border: 1px solid #444;
+    color: #fff;
+    font-size: 1em;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.matrix-operations {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.matrix-operations button {
+    height: 50px;
+    font-size: 1.5em;
+    border-radius: 8px;
+}
+
+.matrix-result textarea {
+    height: 120px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+/* Mobile Responsive Design */
+@media (max-width: 480px) {
+    body { padding: 0; }
+    .main-container { gap: 0; }
+    .calculator, .matrix-calculator { border-radius: 0; }
+}￼Enter    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 420px;
+    z-index: 1; /* Keep calculator above the background animation */
+}
+
+/* Calculator Container */
+.calculator {
+    background-color: rgba(42, 45, 55, 0.85);
+    backdrop-filter: blur(10px); /* Glass effect */
+    border: 1px solid rgba(0, 255, 106, 0.3);
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Brand Section with Image */
+.brand {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #333742;
+    color: #fff;
+}
+
+/* Animated Profile Picture Wrapper */
+.profile-image-wrapper {
+    width: 55px;
+    height: 55px;
+    margin-right: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: conic-gradient(#00ff6a, #00ffff, #ff00de, #ff8f00, #00ff6a);
+    animation: rotate-border 3s linear infinite;
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2a2d37; /* Inner border to create a gap */
+}
+
+.brand h1 {
+nt-size: 1.5em;
+    margin: 0;
+}
+
+/* Display Screen */
+.display input {
+    width: 100%;
+    height: 100px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 3em;
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+
+/* Button Grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+}
+
+button {
+    height: 70px;
+    font-size: 1.2em;
+    border: none;
+    background-color: rgba(51, 55, 66, 0.8);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button:hover {
+    background-color: #00ff6a;
+    color: #0d0208;
+    text-shadow: 0 0 5px #0d0208;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background-color: rgba(62, 67, 80, 0.8);
+    color: #00ff6a;
+    font-size: 1.5em;
+}
+
+.equal {
+    grid-column: span 2;
+    background-color: #00ff6a;
+    color: #0d0208;
+}
+.equal:hover {
+    background-color: #00ffff;
+}
+
+
+/* --- Matrix Calculator Styles --- */
+.matrix-calculator {
+    background-color: rgba(42, 45, 55, 0.85);
+    backdrop-filter: blur(10px); /* Glass effect */
+    border: 1px solid rgba(0, 255, 106, 0.3);
