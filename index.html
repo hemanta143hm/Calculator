@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMCALCULATOR - Final Version</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.comcom/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="calculator">
+            <div class="brand">
+                <div class="profile-image-wrapper">
+                    <img src="profile.jpg" alt="Profile Image" id="user-image">
+                </div>
+                <h1>HMCALCULATOR</h1>
+            </div>
+            <div class="display">
+                <input type="text" id="result" placeholder="0" readonly>
+            </div>
+            <div class="buttons">
+                <button data-value="Math.asin(">sin⁻¹</button>
+                <button data-value="Math.acos(">cos⁻¹</button>
+                <button data-value="Math.atan(">tan⁻¹</button>
+                <button data-value="Math.PI">π</button>
+                <button data-value="Math.E">e</button>
+                
+                <button data-value="Math.sin(">sin</button>
+                <button data-value="Math.cos(">cos</button>
+                <button data-value="Math.tan(">tan</button>
+                <button data-value="**">x<sup>y</sup></button>
+                <button data-value="Math.log10(">log</button>
+                
+                <button data-value="1/">1/x</button>
+                <button data-value="Math.pow(val, 3)">x³</button>
+                <button data-value="Math.sqrt(">√</button>
+                <button data-value="Math.cbrt(">³√</button>
+                <button data-value="Math.log(">ln</button>
+
+                <button data-value="7">7</button>
+                <button data-value="8">8</button>
+                <button data-value="9">9</button>
+                <button data-value="DEL" class="operator">DEL</button>
+                <button data-value="C" class="operator">C</button>
+                
+                <button data-value="4">4</button>
+                <button data-value="5">5</button>
+                <button data-value="6">6</button>
+                <button data-value="*" class="operator">×</button>
+                <button data-value="/" class="operator">÷</button>
+                
+                <button data-value="1">1</button>
+                <button data-value="2">2</button>
+                <button data-value="3">3</button>
+                <button data-value="+" class="operator">+</button>
+                <button data-value="-" class="operator">-</button>
+                
+                <button data-value="/100">%</button>
+                <button data-value="0">0</button>
+                <button data-value=".">.</button>
+                <button data-value="=" class="equal">=</button>
+            </div>
+        </div>
+
+        <div class="matrix-calculator">
+            <h2>Matrix Calculator</h2>
+            <div class="matrix-inputs">
+                <div class="matrix-container">
+                    <label for="matrixA">Matrix A</label>
+                    <textarea id="matrixA" rows="4" placeholder="e.g.,&#10;1, 2&#10;3, 4"></textarea>
+                </div>
+                <div class="matrix-container">
+                    <label for="matrixB">Matrix B</label>
+                    <textarea id="matrixB" rows="4" placeholder="e.g.,&#10;5, 6&#10;7, 8"></textarea>
+                </div>
+            </div>
+            <div class="matrix-operations">
+                <button id="add">+</button>
+                <button id="subtract">-</button>
+                <button id="multiply">×</button>
+                <button id="determinant">det(A)</button>
+                <button id="inverse">inv(A)</button>
+            </div>
+            <div class="matrix-result">
+                <label for="matrixResult">Result</label>
+                <textarea id="matrixResult" rows="5" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"></script>
+    <script src="script.js"></script>
+</body>
+                  </html>
